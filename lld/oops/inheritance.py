@@ -13,6 +13,9 @@ class Animal:
     def sleep(self):
         print("I am sleeping")
 
+    # Polymorphism example
+    def move(self):
+        print("I am moving")
 
 class Dog(Animal):
 
@@ -36,6 +39,12 @@ class Dog(Animal):
             f"{self.name} is my dog and his age is {self.age} "
             f"and he is of {self.breed} cross-breed."
         )
+    # This method has the same name as the method in the parent class
+    # but it behaves differently.
+    # This is an example of method overriding / polymorphism.
+    def move(self):
+        print("I am running on 4 legs")
+
 
 
 # Creating an object of the Dog class
@@ -52,3 +61,16 @@ dog.eat()
 
 # Calling the method of the Dog class
 dog.display()
+
+# Polymorphism calls
+
+# Creating an object of the Animal class
+a1 = Animal("Banno", 5)
+
+# Calling move() from the Animal class
+a1.move()
+
+# Calling move() from the Dog class
+# Dog has its own version of move(),
+# so the Dog version is executed instead of the Animal version.
+dog.move()
